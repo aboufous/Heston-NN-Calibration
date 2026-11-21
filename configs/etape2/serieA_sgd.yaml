@@ -1,0 +1,10 @@
+# Étape 2 – série A (optimiseurs) : sgd.
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+# lr : le meilleur des 3 taux (1e-2, 1e-3, 1e-4) choisi sur la validation.
+name: etape2_serieA_sgd
+model:
+  hidden_layers: 2
+  width: 128
+train:
+  optimizer: sgd
+  lr: 0.01

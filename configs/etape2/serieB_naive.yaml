@@ -1,0 +1,7 @@
+# Étape 2 – série B (initialisations) : naive.
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+name: etape2_serieB_naive
+model:
+  hidden_layers: 2
+  width: 128
+  init: naive

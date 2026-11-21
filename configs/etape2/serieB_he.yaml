@@ -1,0 +1,7 @@
+# Étape 2 – série B (initialisations) : he.
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+name: etape2_serieB_he
+model:
+  hidden_layers: 2
+  width: 128
+  init: he

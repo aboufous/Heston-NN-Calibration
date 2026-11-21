@@ -1,0 +1,13 @@
+{
+  "model": "ridge_poly",
+  "best_params": {
+    "degree": 4,
+    "alpha": 1.0
+  },
+  "val_mean_bp": 8.07670619622279,
+  "test_mean_bp": 17.44882925947521,
+  "test_max_bp": 880.9793920483745,
+  "response_s": 0.0002638999721966684,
+  "train_seconds": 0.6162114143371582,
+  "n_train": 17569
+}

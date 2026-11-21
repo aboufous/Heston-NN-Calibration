@@ -1,0 +1,12 @@
+{
+  "model": "gaussian_process",
+  "best_params": {
+    "max_train_samples": 5000
+  },
+  "val_mean_bp": 0.9365910914426196,
+  "test_mean_bp": 7.087644208487384,
+  "test_max_bp": 515.4265775231772,
+  "response_s": 0.0080576500040479,
+  "train_seconds": 56.27186870574951,
+  "n_train": 17569
+}

@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_tanh",
+  "seed": 2,
+  "val_mean_bp": 5.1481559723890316,
+  "val_max_bp": 154.33590224062598,
+  "test_mean_bp": 5.195730516190606,
+  "test_max_bp": 145.81720000417934,
+  "best_epoch": 83,
+  "n_params": 28632,
+  "training_time_s": 101.92306040000403
+}

@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieB_he",
+  "seed": 1,
+  "val_mean_bp": 5.8814220252894565,
+  "val_max_bp": 146.4523830996886,
+  "test_mean_bp": 5.816943416958431,
+  "test_max_bp": 175.48563632081985,
+  "best_epoch": 103,
+  "n_params": 28632,
+  "training_time_s": 165.49953739997
+}

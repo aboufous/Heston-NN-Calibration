@@ -1,0 +1,66 @@
+% Rapport du projet : calibration du modèle de Heston par réseau de neurones.
+% Compilation : voir rapport/README.md (latexmk -pdf main.tex, ou LaTeX Workshop dans VS Code).
+% Chaque section est dans son propre fichier (sections/), pour pouvoir écrire à plusieurs sans conflit Git.
+% Les figures sont prises directement dans results/figures/ : relancer un notebook met le rapport à jour.
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\graphicspath{{../results/figures/}{figures/}}
+\usepackage{booktabs}
+\usepackage[locale=FR]{siunitx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[authoryear,round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[french,nameinlink]{cleveref}
+
+% Les étiquettes utilisent « - » et pas « : » (babel french rend « : » actif, ce qui casse \cref).
+% Notations
+\newcommand{\pb}{\,\text{pb}}                     % point de base de volatilité (0,01 point de vol)
+\newcommand{\ie}{c'est-à-dire}
+\newcommand{\afaire}[1]{\textcolor{red}{\textbf{[À faire : #1]}}}   % à supprimer dans la version finale
+
+\title{Calibration du modèle de Heston par réseau de neurones}
+\author{Adam Boufous \and Elise Ricourt \and Matthieu Galtier \and Omar Guenoun}
+\date{Projet de Deep Learning --- Université Paris Dauphine-PSL --- novembre 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Calibrer le modèle de Heston demande des centaines d'évaluations de la surface de volatilité, chacune calculée par
+une méthode de Fourier. Comme \citet{horvath2021}, nous entraînons un réseau de neurones à prédire la surface à
+partir des cinq paramètres, sur \num{50000} surfaces simulées, puis nous l'utilisons à la place de Fourier pour
+calibrer. Après le choix de l'architecture ($2\times128$) et de l'entraînement (Adam, He, GELU), le réseau fait
+\num{2.67}\pb\ d'erreur moyenne sur le test et répond plus de 70 fois plus vite que Fourier. Il est plus précis que
+les méthodes d'apprentissage classiques dès qu'il apprend sur toutes les données. En calibration, il retrouve les
+paramètres de surfaces simulées et donne sur le SPX les mêmes résultats que Fourier, des centaines de fois plus
+vite ; son coût d'entraînement est amorti en quelques calibrations.
+\end{abstract}
+
+\tableofcontents
+
+\input{sections/01_introduction}
+\input{sections/02_donnees}
+\input{sections/02b_mise_en_oeuvre}
+\input{sections/03_architectures}
+\input{sections/04_entrainement}
+\input{sections/05_dl_vs_ml}
+\input{sections/06_calibration}
+\input{sections/07_conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

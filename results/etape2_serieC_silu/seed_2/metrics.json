@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_silu",
+  "seed": 2,
+  "val_mean_bp": 2.539847501521025,
+  "val_max_bp": 71.6268985745172,
+  "test_mean_bp": 2.5519735643600336,
+  "test_max_bp": 91.55370815437935,
+  "best_epoch": 167,
+  "n_params": 28632,
+  "training_time_s": 133.65621290000854
+}

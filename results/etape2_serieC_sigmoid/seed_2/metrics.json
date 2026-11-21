@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_sigmoid",
+  "seed": 2,
+  "val_mean_bp": 4.010176997831278,
+  "val_max_bp": 130.5435196279514,
+  "test_mean_bp": 4.0394093449486865,
+  "test_max_bp": 178.51519140314102,
+  "best_epoch": 198,
+  "n_params": 28632,
+  "training_time_s": 60.1671861000068
+}

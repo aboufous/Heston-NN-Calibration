@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_linear",
+  "seed": 1,
+  "val_mean_bp": 155.66429452250577,
+  "val_max_bp": 1769.9879793345267,
+  "test_mean_bp": 154.67029484324453,
+  "test_max_bp": 1707.1917441242017,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 113.75658399995882
+}

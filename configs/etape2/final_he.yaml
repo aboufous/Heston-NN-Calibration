@@ -1,0 +1,9 @@
+name: etape2_final_he
+model:
+  hidden_layers: 2
+  width: 128
+  init: he
+  activation: gelu
+train:
+  optimizer: adam
+  lr: 0.001

@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieB_naive",
+  "seed": 2,
+  "val_mean_bp": 5.5365830161743155,
+  "val_max_bp": 151.51757978127898,
+  "test_mean_bp": 5.576512849787042,
+  "test_max_bp": 184.53742033155666,
+  "best_epoch": 117,
+  "n_params": 28632,
+  "training_time_s": 125.88650710007641
+}

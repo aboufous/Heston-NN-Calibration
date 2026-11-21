@@ -1,0 +1,12 @@
+{
+  "model": "knn",
+  "best_params": {
+    "n_neighbors": 10
+  },
+  "val_mean_bp": 47.14041007629782,
+  "test_mean_bp": 161.75964759828742,
+  "test_max_bp": 2213.831442947863,
+  "response_s": 0.002158750023227185,
+  "train_seconds": 1.8660879135131836,
+  "n_train": 17569
+}

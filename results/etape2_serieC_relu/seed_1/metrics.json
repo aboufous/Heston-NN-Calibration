@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_relu",
+  "seed": 1,
+  "val_mean_bp": 7.298498176589563,
+  "val_max_bp": 108.15158966132942,
+  "test_mean_bp": 7.303954319928981,
+  "test_max_bp": 130.55348663261356,
+  "best_epoch": 192,
+  "n_params": 28632,
+  "training_time_s": 59.914405399991665
+}

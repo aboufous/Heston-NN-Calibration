@@ -1,0 +1,6 @@
+# Étape 1 – architecture 2 couches × 32 neurones.
+# Seule l'architecture change ; le reste vient de base.yaml.
+name: etape1_arch_2x32
+model:
+  hidden_layers: 2
+  width: 32

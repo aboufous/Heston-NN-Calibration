@@ -1,0 +1,61 @@
+# Règles communes à toutes les expériences.
+# Ne modifier qu'après accord de l'équipe.
+
+seeds: [0, 1, 2, 3, 4]          # 5 graines par configuration
+
+grid:
+  maturities: [0.1, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.0]        # en années
+  moneyness: [0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5]  # K / F
+
+# Plages des paramètres (v0 et theta en VARIANCE). Servent au tirage des données ET de bornes à la calibration.
+# Choisies pour couvrir les calibrations Heston publiées sur le SPX (xi souvent > 1, rho nettement négatif) ;
+# plus larges que celles du code Heston de Horvath et al. (v0 dans [0.0001, 0.04], xi <= 1, Feller imposée).
+# La condition de Feller (2 kappa theta > xi^2) n'est PAS imposée : les calibrations de marché la violent souvent.
+# On exclut seulement les violations extrêmes (min_feller_ratio, plus bas).
+param_ranges:
+  v0:    [0.0049, 0.16]          # vol initiale sqrt(v0) de 7 % à 40 %
+  theta: [0.01, 0.16]            # vol de long terme sqrt(theta) de 10 % à 40 %
+  kappa: [0.5, 10.0]
+  xi:    [0.1, 1.5]
+  rho:   [-0.95, -0.1]
+
+# Paramètres tirés uniformément en VOL (racine carrée) et non en variance : sinon la plupart des surfaces ont des
+# vols élevées (> 30 %) et la zone habituelle du SPX (10-25 %) est sous-représentée.
+sample_in_vol: [v0, theta]
+
+# Ratio de Feller 2 kappa theta / xi^2 minimal : en dessous (≈ 7 % des tirages), la queue gauche de la densité est
+# si épaisse que la méthode COS fait des erreurs de plusieurs pb, et ces jeux sont loin des calibrations SPX
+# publiées. À la calibration (étape 4), vérifier que le résultat respecte ce ratio (sinon : hors du domaine appris).
+min_feller_ratio: 0.1
+
+split:                           # découpage fixe, même graine pour tous
+  train: 0.8
+  val: 0.1
+  test: 0.1
+  seed: 42
+
+train:                           # budget identique pour toutes les expériences
+  epochs: 200
+  batch_size: 32
+  optimizer: adam
+  lr: 0.001                      # à remplacer par le meilleur taux trouvé à l'étape 1
+  loss: mse
+
+model:                           # configuration de référence
+  hidden_layers: 4
+  width: 30
+  activation: elu
+  init: he
+
+metric: mean_abs_error_bp        # erreur moyenne en points de base (+ erreur max rapportée)
+
+speed_threshold: 10            # PAS FIXÉ AU DÉPART : gain minimal vs Fourier, choisi après l'étape 1
+
+# Zone de calibration sur le SPX (notebooks 00 et 04) : seuls ces points de la surface de marché servent à calibrer.
+# Heston ne sait pas reproduire le skew très raide à 1 mois ni les ailes extrêmes : sur les 3 jours de novembre, calibrer
+# sur tous les points cotés donne ~130 pb d'erreur moyenne (jusqu'à 20 points de vol), sur cette zone ~30 pb.
+# Dans les deux cas xi colle à sa borne de 1,5 (sans borne, il vaudrait ~2 sur cette zone, pour la même erreur moyenne).
+# Ne concerne ni la grille ni les données d'entraînement : le réseau prédit toujours les 88 points.
+spx_calibration:
+  moneyness: [0.7, 1.3]          # strikes de 0,7 à 1,3 (±30 % autour du forward)
+  min_maturity: 0.3              # sans la maturité à 1 mois (T = 0,1)

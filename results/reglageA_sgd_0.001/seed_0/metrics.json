@@ -1,0 +1,11 @@
+{
+  "name": "reglageA_sgd_0.001",
+  "seed": 0,
+  "val_mean_bp": 70.00480112333184,
+  "val_max_bp": 976.6531774975412,
+  "test_mean_bp": 70.31101312510145,
+  "test_max_bp": 985.9558873878854,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 60.695135699992534
+}

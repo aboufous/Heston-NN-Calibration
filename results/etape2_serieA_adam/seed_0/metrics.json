@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieA_adam",
+  "seed": 0,
+  "val_mean_bp": 4.961714558142627,
+  "val_max_bp": 112.06868350243953,
+  "test_mean_bp": 4.990049183420949,
+  "test_max_bp": 129.46198350103603,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 94.00382420001552
+}

@@ -1,0 +1,22 @@
+# Données : le jeu d'entraînement et les données SPX sont versionnés (une chaîne d'options d'un jour passé ne peut
+# plus être téléchargée : on garde le fichier brut de chaque jour pour pouvoir reconstruire la surface)
+data/*
+!data/.gitkeep
+!data/surfaces.npz
+!data/spx/
+!data/spx_surface.npz
+# Résultats : on partage les métriques, les historiques et les temps, pas les réseaux des runs (trop lourds)
+results/**/model.keras
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Julia
+julia/Manifest.toml
+
+# Système
+.DS_Store

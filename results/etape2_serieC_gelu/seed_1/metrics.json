@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieC_gelu",
+  "seed": 1,
+  "val_mean_bp": 2.743787552117529,
+  "val_max_bp": 83.35541298662818,
+  "test_mean_bp": 2.739231408397421,
+  "test_max_bp": 111.60961034473337,
+  "best_epoch": 112,
+  "n_params": 28632,
+  "training_time_s": 142.98294590000296
+}

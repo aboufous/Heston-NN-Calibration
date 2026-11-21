@@ -1,0 +1,6 @@
+# Étape 1 – architecture 4 couches × 128 neurones.
+# Seule l'architecture change ; le reste vient de base.yaml.
+name: etape1_arch_4x128
+model:
+  hidden_layers: 4
+  width: 128

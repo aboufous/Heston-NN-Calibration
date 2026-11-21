@@ -1,0 +1,9 @@
+{
+    "seconds": 23.9207116,
+    "seconds_per_surface": 0.000478414232,
+    "n_surfaces": 50000,
+    "n_nan_points": 83827,
+    "n_surfaces_with_nan": 28078,
+    "n_threads": 20,
+    "machine": "znver5"
+}

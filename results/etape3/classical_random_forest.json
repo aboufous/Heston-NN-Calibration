@@ -1,0 +1,13 @@
+{
+  "model": "random_forest",
+  "best_params": {
+    "n_estimators": 300,
+    "max_depth": 20
+  },
+  "val_mean_bp": 43.24147349180474,
+  "test_mean_bp": 109.58559945947808,
+  "test_max_bp": 2186.2528419221344,
+  "response_s": 0.018049250007607043,
+  "train_seconds": 85.66836953163147,
+  "n_train": 17569
+}

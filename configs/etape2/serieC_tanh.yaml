@@ -1,0 +1,7 @@
+# Étape 2 – série C (activations) : tanh.
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+name: etape2_serieC_tanh
+model:
+  hidden_layers: 2
+  width: 128
+  activation: tanh

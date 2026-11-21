@@ -1,0 +1,11 @@
+{
+  "name": "reglageA_adagrad_0.0001",
+  "seed": 0,
+  "val_mean_bp": 155.34000402062097,
+  "val_max_bp": 1554.2691240288368,
+  "test_mean_bp": 154.62355729064635,
+  "test_max_bp": 1671.8771900254944,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 100.56751869997242
+}

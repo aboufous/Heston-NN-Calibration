@@ -1,0 +1,11 @@
+{
+  "name": "etape1_arch_4x30",
+  "seed": 1,
+  "val_mean_bp": 6.7561674327220045,
+  "val_max_bp": 143.17789275309522,
+  "test_mean_bp": 6.7899709045448,
+  "test_max_bp": 147.62682059735022,
+  "best_epoch": 123,
+  "n_params": 5698,
+  "training_time_s": 133.22955460002413
+}

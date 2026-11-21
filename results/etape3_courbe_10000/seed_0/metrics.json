@@ -1,0 +1,11 @@
+{
+  "name": "etape3_courbe_10000",
+  "seed": 0,
+  "val_mean_bp": 3.3487800911062986,
+  "val_max_bp": 76.8747969747463,
+  "test_mean_bp": 12.248481008171105,
+  "test_max_bp": 588.3815352167112,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 64.64696889999323
+}

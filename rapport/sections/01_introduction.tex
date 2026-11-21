@@ -1,0 +1,31 @@
+\section{Introduction}
+\label{sec-introduction}
+
+Calibrer un modèle, c'est choisir ses paramètres pour que les prix qu'il donne collent aux prix du marché. Pour le
+modèle de \citet{heston1993}, il n'existe pas de formule fermée des prix : chaque surface de volatilité implicite
+se calcule par une méthode de Fourier, qui prend quelques millisecondes. Un optimiseur demande des centaines
+d'évaluations de la surface, et une banque recalibre ses modèles plusieurs fois par jour, sur de nombreux sous-jacents :
+le pricer devient le goulot d'étranglement.
+
+\citet{horvath2021} proposent de séparer le travail en deux temps. Hors ligne, un réseau de neurones apprend la
+fonction qui associe aux paramètres du modèle la surface de volatilité sur une grille fixe de maturités et de
+strikes ; les exemples d'entraînement sont produits une fois pour toutes avec le pricer exact. En ligne, la
+calibration utilise le réseau à la place du pricer : une évaluation n'est plus qu'un passage avant dans un petit
+réseau, beaucoup plus rapide. Le coût est déplacé vers la génération des données et l'entraînement, qui ne sont
+faits qu'une fois.
+
+Nous appliquons cette méthode au modèle de Heston et cherchons à répondre à quatre questions :
+\begin{itemize}
+  \item quelle architecture choisir, sachant que le réseau doit être à la fois précis et au moins dix fois plus
+  rapide que le pricer Fourier ;
+  \item comment l'entraîner (optimiseur, initialisation, fonction d'activation) ;
+  \item un réseau de neurones fait-il mieux que des méthodes d'apprentissage classiques sur ce problème ;
+  \item la calibration par le réseau est-elle aussi bonne que la calibration par Fourier, sur des surfaces
+  simulées et sur le marché (SPX), et à partir de combien de calibrations le temps d'entraînement est-il
+  rentabilisé.
+\end{itemize}
+
+La \cref{sec-donnees} présente le modèle, le pricer de référence, le jeu d'entraînement et les surfaces de marché.
+La \cref{sec-mise-en-oeuvre} décrit l'organisation du code. Les \cref{sec-architectures,sec-entrainement}
+choisissent l'architecture puis l'entraînement du réseau. La \cref{sec-dl-vs-ml} le compare à des méthodes
+classiques, et la \cref{sec-calibration} l'utilise pour calibrer. La \cref{sec-conclusion} conclut.

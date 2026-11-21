@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieA_rmsprop",
+  "seed": 1,
+  "val_mean_bp": 7.14533552882727,
+  "val_max_bp": 138.20638999435002,
+  "test_mean_bp": 7.074981147455817,
+  "test_max_bp": 178.0480399997139,
+  "best_epoch": 160,
+  "n_params": 28632,
+  "training_time_s": 116.80924239999149
+}

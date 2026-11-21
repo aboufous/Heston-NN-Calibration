@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+tqdm           # barres de progression
+matplotlib
+pyyaml
+tensorflow     # Keras est inclus, comme en cours (DL-ISF)
+scikit-learn
+lightgbm
+yfinance
+jupyter
+ipykernel
+juliacall      # pour appeler le pricer Julia depuis Python (calibration de référence)
+pytest

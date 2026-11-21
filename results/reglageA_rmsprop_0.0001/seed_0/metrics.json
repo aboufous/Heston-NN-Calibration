@@ -1,0 +1,11 @@
+{
+  "name": "reglageA_rmsprop_0.0001",
+  "seed": 0,
+  "val_mean_bp": 9.68196056822432,
+  "val_max_bp": 247.46489010976256,
+  "test_mean_bp": 9.811489109864397,
+  "test_max_bp": 235.2444327464889,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 106.97957100003259
+}

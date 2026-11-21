@@ -1,0 +1,7 @@
+# Étape 2 – série C (activations) : elu.
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+name: etape2_serieC_elu
+model:
+  hidden_layers: 2
+  width: 128
+  activation: elu

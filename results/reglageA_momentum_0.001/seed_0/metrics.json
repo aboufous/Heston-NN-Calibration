@@ -1,0 +1,11 @@
+{
+  "name": "reglageA_momentum_0.001",
+  "seed": 0,
+  "val_mean_bp": 32.00991768332937,
+  "val_max_bp": 668.0836924187988,
+  "test_mean_bp": 32.08374870140846,
+  "test_max_bp": 635.4370581893314,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 98.32289520004997
+}

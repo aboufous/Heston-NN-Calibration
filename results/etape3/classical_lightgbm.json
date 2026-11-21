@@ -1,0 +1,13 @@
+{
+  "model": "lightgbm",
+  "best_params": {
+    "n_estimators": 1000,
+    "learning_rate": 0.05
+  },
+  "val_mean_bp": 15.870127166836394,
+  "test_mean_bp": 59.12802106467167,
+  "test_max_bp": 1610.3066084274294,
+  "response_s": 0.08638374996371567,
+  "train_seconds": 111.80632066726685,
+  "n_train": 17569
+}

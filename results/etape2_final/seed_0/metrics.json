@@ -1,0 +1,11 @@
+{
+  "name": "etape2_final",
+  "seed": 0,
+  "val_mean_bp": 2.957159476775068,
+  "val_max_bp": 99.72948743325077,
+  "test_mean_bp": 2.963499738792824,
+  "test_max_bp": 125.00265020424422,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 145.30825629999163
+}

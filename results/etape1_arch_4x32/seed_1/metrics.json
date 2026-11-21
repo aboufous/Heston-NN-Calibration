@@ -1,0 +1,11 @@
+{
+  "name": "etape1_arch_4x32",
+  "seed": 1,
+  "val_mean_bp": 7.9703727279082415,
+  "val_max_bp": 192.39733652968937,
+  "test_mean_bp": 7.766719631362152,
+  "test_max_bp": 196.60311492990493,
+  "best_epoch": 152,
+  "n_params": 6264,
+  "training_time_s": 119.3048593000276
+}

@@ -1,0 +1,11 @@
+{
+  "name": "etape1_arch_6x128",
+  "seed": 1,
+  "val_mean_bp": 6.318035781902271,
+  "val_max_bp": 361.5711154251055,
+  "test_mean_bp": 6.28559778408542,
+  "test_max_bp": 161.5124223996228,
+  "best_epoch": 191,
+  "n_params": 94680,
+  "training_time_s": 197.84195050000562
+}

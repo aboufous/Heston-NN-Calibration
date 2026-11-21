@@ -1,0 +1,18 @@
+# Étape 3 – modèles classiques et leurs grilles d'hyperparamètres (choix sur la validation).
+models:
+  ridge_poly:
+    degree: [2, 3, 4]
+    alpha: [1.0e-4, 1.0e-2, 1.0]
+  knn:
+    n_neighbors: [3, 5, 10, 20]
+  random_forest:
+    n_estimators: [100, 300]
+    max_depth: [null, 20]
+  lightgbm:
+    n_estimators: [300, 1000]
+    learning_rate: [0.05, 0.1]
+  gaussian_process:
+    max_train_samples: 5000      # sous-échantillon : trop lourd sur le jeu complet
+
+learning_curve:
+  train_sizes: [1000, 5000, 10000, full]   # full = les 17 569 surfaces sans NaN (20 000 n'est plus possible)

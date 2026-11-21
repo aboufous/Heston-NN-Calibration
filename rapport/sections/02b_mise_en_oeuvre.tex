@@ -1,0 +1,45 @@
+% Organisation du code et des calculs.
+
+\section{Mise en œuvre}
+\label{sec-mise-en-oeuvre}
+
+Les expériences des sections suivantes demandent plus d'une centaine d'entraînements, dont certains durent près
+d'une heure. Nous avons donc organisé le code et les calculs pour pouvoir corriger, relancer et partager le travail
+sans rien recalculer inutilement.
+
+\subsection{Un code modulaire}
+
+Tout le code réutilisable est regroupé dans un paquet Python (\texttt{src/heston\_nn}), découpé par rôle :
+chargement et découpage des données, construction du réseau, entraînement, métriques, calibration et figures.
+Les notebooks restent courts : ils appellent ces fonctions et présentent les résultats. Les règles communes
+(grille, plages des paramètres, découpage, budget d'entraînement, graines) sont écrites une seule fois dans un
+fichier de configuration (\texttt{configs/base.yaml}) ; chaque expérience n'a qu'un petit fichier qui précise ce
+qui change (par exemple l'activation).
+
+Cette organisation nous a permis de corriger et d'améliorer le code tout au long du projet sans toucher aux
+notebooks : une correction dans une fonction profite à toutes les étapes. Par exemple, la gestion des points
+manquants (NaN) dans la perte a été ajoutée une seule fois, dans la fonction d'entraînement, et s'applique à tous
+les réseaux. Une centaine de tests automatiques vérifient chaque fonction sur des données de petite taille, ce qui
+a permis de repérer les erreurs avant de lancer les longs calculs.
+
+\subsection{Des calculs partagés et enregistrés}
+
+Pour aller plus vite, les entraînements sont répartis entre nos 4 machines. Chaque membre de l'équipe a un numéro
+de machine (de 0 à 3) : la liste de toutes les expériences, c'est-à-dire chaque configuration avec chaque graine,
+est partagée de façon que chaque machine en prenne une sur quatre. Il suffit de changer ce numéro dans le notebook
+pour que chacun calcule sa part.
+
+Chaque entraînement terminé est enregistré dans son propre dossier, un par configuration et par graine :
+les erreurs, l'historique d'apprentissage et le réseau. Avant de lancer un entraînement, le code vérifie s'il est
+déjà fait ; si oui, il relit simplement le résultat. Un calcul n'est donc fait qu'une seule fois : si une machine
+s'arrête en cours de route, il suffit de relancer la même cellule pour reprendre là où elle en était. Les résultats
+de chaque machine sont ensuite rassemblés sur GitHub, et le notebook les relit tous pour tracer les courbes et
+faire les tableaux. Une même référence n'est jamais recalculée : le réseau retenu à l'étape 1 sert directement de
+référence à l'étape 2.
+
+\subsection{Reproductibilité}
+
+Toutes les sources de hasard sont fixées par une graine : tirage des paramètres, découpage des données,
+initialisation des poids et ordre des lots. Avec la même configuration et la même graine, un entraînement redonne
+les mêmes résultats. Le code, les configurations, les données d'entraînement et les résultats sont versionnés sur
+GitHub, de sorte que chaque chiffre de ce rapport peut être retrouvé et recalculé.

@@ -1,0 +1,11 @@
+{
+  "name": "etape3_reseau_final_sans_nan",
+  "seed": 1,
+  "val_mean_bp": 2.8178508933718005,
+  "val_max_bp": 48.98874306133893,
+  "test_mean_bp": 9.754362702563988,
+  "test_max_bp": 484.8144201970353,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 82.30163000000175
+}

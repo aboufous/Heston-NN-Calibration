@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieB_xavier",
+  "seed": 1,
+  "val_mean_bp": 4.805283036678999,
+  "val_max_bp": 124.81418010356987,
+  "test_mean_bp": 4.77303171618447,
+  "test_max_bp": 149.22986394079433,
+  "best_epoch": 161,
+  "n_params": 28632,
+  "training_time_s": 114.75671800004784
+}

@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieA_adagrad",
+  "seed": 0,
+  "val_mean_bp": 21.255506758364675,
+  "val_max_bp": 444.92472092502675,
+  "test_mean_bp": 21.3700541966549,
+  "test_max_bp": 437.3775356518167,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 144.54875840002205
+}

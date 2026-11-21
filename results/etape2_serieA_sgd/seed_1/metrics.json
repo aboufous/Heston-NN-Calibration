@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieA_sgd",
+  "seed": 1,
+  "val_mean_bp": 32.35539409639614,
+  "val_max_bp": 586.5380943539877,
+  "test_mean_bp": 32.5333208410084,
+  "test_max_bp": 577.1771328784808,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 86.04844370001229
+}

@@ -1,0 +1,11 @@
+# Fichiers temporaires de LaTeX (le PDF est produit par GitHub, voir README.md)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+main.pdf

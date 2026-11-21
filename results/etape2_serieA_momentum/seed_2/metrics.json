@@ -1,0 +1,11 @@
+{
+  "name": "etape2_serieA_momentum",
+  "seed": 2,
+  "val_mean_bp": 11.235010435548167,
+  "val_max_bp": 307.3474797144221,
+  "test_mean_bp": 11.255620857394025,
+  "test_max_bp": 294.2345173244998,
+  "best_epoch": 200,
+  "n_params": 28632,
+  "training_time_s": 92.86005200003274
+}

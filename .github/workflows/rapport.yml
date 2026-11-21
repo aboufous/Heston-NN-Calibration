@@ -1,0 +1,23 @@
+# Compile le rapport LaTeX à chaque push qui le modifie, et met le PDF à disposition dans l'onglet Actions.
+name: Rapport (PDF)
+
+on:
+  push:
+    paths:
+      - "rapport/**"
+      - "results/figures/**"
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: rapport
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rapport-pdf
+          path: rapport/main.pdf

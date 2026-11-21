@@ -1,0 +1,38 @@
+% Conclusion.
+
+\section{Conclusion}
+\label{sec-conclusion}
+
+Nous avons appliqué au modèle de Heston la méthode de \citet{horvath2021} : apprendre une fois pour toutes la
+fonction qui associe aux cinq paramètres la surface de volatilité, puis calibrer avec le réseau à la place du
+pricer de Fourier. Elle fonctionne.
+
+\paragraph{Le réseau.} Un petit réseau suffit. Le $2\times128$ est le plus précis des réseaux assez rapides : les
+plus grands sont plus précis mais trop lents, et ajouter des couches n'aide pas. Le choix de l'entraînement compte
+autant que la taille : avec Adam, l'initialisation de He et l'activation GELU, l'erreur passe de \num{5.09} à
+\num{2.67}\pb\ sur le test, pour le même temps de réponse, plus de 70 fois plus court que celui de
+Fourier en Julia. Ces choix ne s'additionnent pas : le meilleur réglage d'un hyperparamètre dépend des autres.
+
+\paragraph{Réseau ou apprentissage classique.} Sur un petit jeu de surfaces complètes, un processus gaussien est
+plus précis que le réseau. Le réseau l'emporte pour deux raisons : son erreur baisse encore quand on ajoute des
+données, et la perte masquée lui permet d'apprendre sur toutes les surfaces, y compris celles qui ont un point
+manquant. Avec toutes les données, il est 2,7 fois plus précis que le GP et son erreur maximale est cinq fois plus
+petite.
+
+\paragraph{La calibration.} Sur 100 surfaces simulées, le réseau retrouve les paramètres à moins de
+\SI{0.22}{\percent} de leur plage en médiane, avec une erreur d'ajustement de \num{1.12}\pb, et calibre environ
+640 fois plus vite que Fourier en Python. Sur les quatre jours de SPX, il donne les mêmes paramètres et la même
+erreur que Fourier (environ \num{29}\pb), en un dixième de seconde au lieu d'une trentaine de secondes. Le coût de la
+génération des données et de l'entraînement est amorti dès 5 calibrations face à Fourier en Python, et vers
+\num{90} face à Julia : bien moins que ce qu'une banque calibre en une journée.
+
+\paragraph{Limites.} L'erreur sur le SPX vient du modèle, pas du réseau : Heston ne reproduit pas le skew à un mois,
+$\xi$ atteint sa borne, et nous avons dû calibrer sur une zone réduite de la surface. Nos données de marché couvrent
+quatre jours de novembre 2026, dans un seul régime de volatilité. Enfin, le réseau ne connaît que le domaine sur
+lequel il a appris : une surface qui en sort devrait être recalibrée avec Fourier, ou le réseau réentraîné.
+
+\paragraph{Pistes.} Le gain serait bien plus grand pour un modèle sans pricer rapide. Pour les modèles à volatilité
+rugueuse \citep{gatheral2018}, qui reproduisent mieux le skew court du SPX, chaque surface demande une simulation de
+Monte-Carlo : c'est là que la méthode prend tout son intérêt, comme le montrent \citet{horvath2021}. Une base de
+données historique permettrait aussi de tester la calibration sur plusieurs régimes de marché, calmes comme en
+crise.

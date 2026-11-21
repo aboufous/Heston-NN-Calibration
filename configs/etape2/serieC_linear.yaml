@@ -1,0 +1,8 @@
+# Étape 2 – série C (activations) : linear = AUCUNE activation dans les couches cachées.
+# Témoin : sans non-linéarité, le réseau revient à une régression linéaire (cours S1, problème XOR).
+# Remplacer ARCHI par l'architecture retenue à l'étape 1.
+name: etape2_serieC_linear
+model:
+  hidden_layers: 2
+  width: 128
+  activation: linear

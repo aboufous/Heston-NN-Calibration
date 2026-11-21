@@ -1,0 +1,9 @@
+{
+    "median_s": 0.00229055,
+    "min_s": 0.0009331000000000001,
+    "max_s": 0.0253331,
+    "n_parameter_sets": 200,
+    "n_repeats": 5,
+    "n_threads": 1,
+    "machine": "znver5"
+}
