@@ -84,7 +84,11 @@ Le tirage est fixé par une graine : la même commande redonne exactement le mê
 
 À chaque push qui modifie `rapport/` ou `results/figures/`, GitHub compile le rapport : onglet **Actions** →
 « Rapport (PDF) » → **Artifacts** → `rapport-pdf`. En local : `latexmk -pdf main.tex` depuis `rapport/`.
+## Utilisation de l'IA
 
+Un assistant d'IA (Claude, Anthropic) a été utilisé pour aider à écrire le code et à rédiger le rapport, dans un but
+de recherche et pour gagner du temps. Les choix de méthode ont été faits par l'équipe, et tout le contenu (code,
+résultats, rapport) a été relu et vérifié par ses membres.
 ## Référence
 
 Horvath, B., Muguruza, A. et Tomas, M. (2021), « Deep learning volatility: a deep neural network perspective on
